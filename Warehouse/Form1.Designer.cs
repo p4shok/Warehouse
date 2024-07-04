@@ -31,16 +31,18 @@
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            Users = new Button();
-            Storage = new Button();
+            StorageButton = new Button();
             URLforGit = new LinkLabel();
+            UsersButton = new Button();
+            CountDownLabel = new System.Windows.Forms.Label();
+            TimerLabel = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(205, 78);
+            label1.Location = new Point(200, 78);
             label1.Name = "label1";
             label1.Size = new Size(391, 62);
             label1.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(214, 166);
+            label2.Location = new Point(209, 166);
             label2.Name = "label2";
             label2.Size = new Size(381, 62);
             label2.TabIndex = 1;
@@ -60,52 +62,76 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20F);
-            label3.Location = new Point(323, 248);
+            label3.Location = new Point(318, 248);
             label3.Name = "label3";
             label3.Size = new Size(154, 62);
             label3.TabIndex = 2;
             label3.Text = "Склад";
             // 
-            // Users
+            // StorageButton
             // 
-            Users.Font = new Font("Segoe UI", 20F);
-            Users.Location = new Point(243, 439);
-            Users.Name = "Users";
-            Users.Size = new Size(315, 65);
-            Users.TabIndex = 4;
-            Users.Text = "Контрагенты";
-            Users.UseVisualStyleBackColor = true;
-            // 
-            // Storage
-            // 
-            Storage.Font = new Font("Segoe UI", 20F);
-            Storage.Location = new Point(243, 538);
-            Storage.Name = "Storage";
-            Storage.Size = new Size(315, 65);
-            Storage.TabIndex = 5;
-            Storage.Text = "Товары";
-            Storage.UseVisualStyleBackColor = true;
+            StorageButton.Font = new Font("Segoe UI", 20F);
+            StorageButton.Location = new Point(239, 534);
+            StorageButton.Name = "StorageButton";
+            StorageButton.Size = new Size(315, 65);
+            StorageButton.TabIndex = 5;
+            StorageButton.Text = "Товары";
+            StorageButton.UseVisualStyleBackColor = true;
+            StorageButton.Click += StorageButton_Click;
             // 
             // URLforGit
             // 
             URLforGit.AutoSize = true;
             URLforGit.Font = new Font("Segoe UI", 20F);
-            URLforGit.Location = new Point(30, 351);
+            URLforGit.Location = new Point(25, 351);
             URLforGit.Name = "URLforGit";
-            URLforGit.Size = new Size(742, 62);
+            URLforGit.Size = new Size(838, 62);
             URLforGit.TabIndex = 6;
             URLforGit.TabStop = true;
-            URLforGit.Text = "Тут нужно вставить ссылку на Git";
+            URLforGit.Text = "https://github.com/p4shok/Warehouse";
             URLforGit.LinkClicked += URLforGit_LinkClicked;
+            // 
+            // UsersButton
+            // 
+            UsersButton.Font = new Font("Segoe UI", 20F);
+            UsersButton.Location = new Point(239, 427);
+            UsersButton.Name = "UsersButton";
+            UsersButton.Size = new Size(315, 65);
+            UsersButton.TabIndex = 8;
+            UsersButton.Text = "Контрагенты";
+            UsersButton.UseVisualStyleBackColor = true;
+            UsersButton.Click += UsersButton_Click;
+            // 
+            // CountDownLabel
+            // 
+            CountDownLabel.AutoSize = true;
+            CountDownLabel.Font = new Font("Segoe UI", 20F);
+            CountDownLabel.Location = new Point(25, 724);
+            CountDownLabel.Name = "CountDownLabel";
+            CountDownLabel.Size = new Size(490, 62);
+            CountDownLabel.TabIndex = 9;
+            CountDownLabel.Text = "До закрытия формы: ";
+            // 
+            // TimerLabel
+            // 
+            TimerLabel.AutoSize = true;
+            TimerLabel.Font = new Font("Segoe UI", 20F);
+            TimerLabel.Location = new Point(492, 724);
+            TimerLabel.Name = "TimerLabel";
+            TimerLabel.Size = new Size(77, 62);
+            TimerLabel.TabIndex = 10;
+            TimerLabel.Text = "10";
             // 
             // Label
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 795);
+            ClientSize = new Size(889, 795);
+            Controls.Add(TimerLabel);
+            Controls.Add(CountDownLabel);
+            Controls.Add(UsersButton);
             Controls.Add(URLforGit);
-            Controls.Add(Storage);
-            Controls.Add(Users);
+            Controls.Add(StorageButton);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -120,8 +146,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Button Users;
-        private Button Storage;
+        private Button StorageButton;
         private LinkLabel URLforGit;
+        private Button UsersButton;
+        private System.Windows.Forms.Label CountDownLabel;
+        private System.Windows.Forms.Label TimerLabel;
     }
 }
